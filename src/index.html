@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full scroll-smooth">
+<html lang="de" class="scroll-smooth">
 
 <head>
-    <title>Example Landing Page - Showcase</title>
+    <title>KÖ-PHYSIO | Homepage Variante 01</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="An example landing page built using the components from the living styleguide.">
+    <meta
+        name="description"
+        content="KÖ-PHYSIO ist eine Privatpraxis für Physiotherapie und orthopädische Behandlungen auf der Königsallee in Düsseldorf."
+    >
 
     <include src="partials/theme-fouc-guard.html"></include>
 
@@ -17,12 +20,436 @@
     <!-- Link to main CSS will be injected here by HtmlWebpackPlugin -->
 </head>
 
-<body class="h-full bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200 overflow-x-hidden">
+<body class="overflow-x-hidden">
+<header class="site-shell pt-4 md:pt-6">
+    <div class="surface-panel nav-panel">
+        <div class="nav-layout">
+            <nav class="hidden items-center gap-6 lg:flex" aria-label="Hauptnavigation">
+                <a class="nav-link" href="#leistungen">Leistungen</a>
+                <a class="nav-link" href="#warum">Warum KÖ-PHYSIO</a>
+                <a class="nav-link" href="#privatpraxis">Privatpraxis</a>
+            </nav>
 
-<div class="container mx-auto px-4 py-8 max-w-5xl">
-    Edit this file to get started. It will end up as the start page, at dist/index.html.
-</div>
+            <a class="nav-logo" href="#top" aria-label="KÖ-PHYSIO Startseite">
+                <img
+                    src="https://d3thl45e1l81vj.cloudfront.net/logos/koephysio-logo-grey-diagonal-gradiant.png"
+                    alt="KÖ-PHYSIO Privat Logo"
+                >
+            </a>
 
+            <div class="nav-actions">
+                <a class="nav-link hidden lg:inline-flex" href="#kontakt">Kontakt</a>
+                <a class="button-secondary" href="#doctolib">Termin buchen</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="top">
+    <section class="site-shell site-section grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div>
+            <span class="section-kicker">Private Physiotherapie auf der Königsallee</span>
+            <h1 class="display-title max-w-3xl">
+                Physiotherapie mit Ruhe,
+                Präzision und
+                persönlichem Fokus.
+            </h1>
+            <p class="section-lead mt-6">
+                KÖ-PHYSIO verbindet moderne physiotherapeutische Behandlung mit einer ruhigen,
+                diskreten Praxisatmosphäre im Herzen von Düsseldorf. Für Menschen, die
+                individuelle Betreuung und medizinische Sorgfalt schätzen.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a class="button-primary" href="#doctolib">Termin buchen</a>
+                <a class="button-secondary" href="#leistungen">Leistungen ansehen</a>
+            </div>
+
+            <div class="hero-note">
+                <div class="hero-note-item">Privatpraxis mit persönlicher Begleitung statt Taktbetrieb.</div>
+                <div class="hero-note-item">Orthopädische, rehabilitative und spezialisierte Behandlungen.</div>
+                <div class="hero-note-item">Zentrale Lage auf der Königsallee 66, 40212 Düsseldorf.</div>
+            </div>
+        </div>
+
+        <div class="surface-panel hero-visual">
+            <div class="hero-gridline" aria-hidden="true"></div>
+            <div class="hero-monogram" aria-hidden="true">KÖ</div>
+
+            <div class="visual-card visual-card-accent">
+                <span class="card-label">Praxisprofil</span>
+                <h2 class="mt-3 text-2xl font-medium tracking-[-0.04em]">Ruhig. Diskret. Zentral.</h2>
+                <p class="mt-3 text-sm leading-7 text-[color:var(--color-muted)]">
+                    Eine klare, hochwertige Umgebung für konzentrierte Behandlung und persönliche Betreuung.
+                </p>
+            </div>
+
+            <div class="visual-card visual-card-primary">
+                <span class="card-label">Praxisimpression</span>
+                <h2 class="mt-3 text-3xl font-medium tracking-[-0.04em]">
+                    Platz für Fotografie, Praxisansicht oder Logoinszenierung
+                </h2>
+                <p class="mt-3 max-w-md text-sm leading-7 text-[color:var(--color-muted)]">
+                    Der visuelle Bereich kann später mit einer hochwertigen Innenraumaufnahme oder einer
+                    reduzierten Markeninszenierung ergänzt werden.
+                </p>
+                <div class="media-placeholder mt-6">
+                    <span class="media-placeholder-label">Bildplatzhalter</span>
+                    <p>Hero-Motiv, Empfang, Behandlungsraum oder reduzierte Markenaufnahme</p>
+                </div>
+            </div>
+
+            <div class="visual-card visual-card-detail">
+                <span class="card-label">Standort</span>
+                <p class="mt-3 text-base leading-7 text-[color:var(--color-ink)]">
+                    Königsallee 66<br>
+                    40212 Düsseldorf
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="site-shell pb-6 md:pb-10">
+        <div class="grid gap-6 lg:grid-cols-2">
+            <article class="media-panel">
+                <span class="card-label">Bildfläche</span>
+                <h2 class="mt-4 text-3xl font-medium tracking-[-0.04em]">Platzhalter für hochwertige Praxisfotografie</h2>
+                <p class="mt-4">
+                    Gedacht für eine ruhige, helle Aufnahme der Praxis, des Empfangs oder eines
+                    architektonischen Details mit klinisch-eleganter Wirkung.
+                </p>
+                <div class="media-stage mt-8">
+                    <div class="media-stage-frame">
+                        <span class="media-chip">Bildplatzhalter</span>
+                        <span class="media-dimension">Empfohlen: Querformat</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="media-panel">
+                <span class="card-label">Videofläche</span>
+                <h2 class="mt-4 text-3xl font-medium tracking-[-0.04em]">Platzhalter für ein kurzes Praxisvideo</h2>
+                <p class="mt-4">
+                    Gedacht für eine dezente Sequenz mit Raumstimmung, Ankommen in der Praxis oder
+                    einer zurückhaltenden Bewegungsszene ohne werbliche Überinszenierung.
+                </p>
+                <div class="media-stage mt-8">
+                    <div class="media-stage-frame media-stage-video">
+                        <span class="media-chip">Videoplatzhalter</span>
+                        <span class="play-indicator" aria-hidden="true"></span>
+                        <span class="media-dimension">Empfohlen: 15-30 Sekunden, ohne Tonzwang</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="site-shell site-section" id="leistungen">
+        <div class="max-w-3xl">
+            <span class="section-kicker">Leistungen</span>
+            <h2 class="section-title">Alle Leistungen mit klarer visueller Ordnung auf einen Blick.</h2>
+            <p class="section-lead mt-6">
+                Die Leistungsübersicht bleibt ruhig und hochwertig aufgebaut, zeigt jetzt aber jede
+                Behandlung einzeln. Jede Karte enthält bewusst einen Bildplatzhalter, der später mit
+                konsistenter Praxisfotografie oder kuratierten Motiven ersetzt werden kann.
+            </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Physiotherapie</span>
+                    <h3 class="service-media-title">Krankengymnastik</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Rehabilitation</span>
+                    <h3 class="service-media-title">Neurologische Behandlung KG (ZNS)</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Training</span>
+                    <h3 class="service-media-title">Sportphysiotherapie</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Spezialisiert</span>
+                    <h3 class="service-media-title">Atemtherapie</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Spezialisiert</span>
+                    <h3 class="service-media-title">Manuelle Lymphdrainage</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Spezialisiert</span>
+                    <h3 class="service-media-title">Trigger-Punkt-Massage</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Begleitend</span>
+                    <h3 class="service-media-title">Heißluft</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Training</span>
+                    <h3 class="service-media-title">Personal Training</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Training</span>
+                    <h3 class="service-media-title">Beckenbodentraining</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Massage</span>
+                    <h3 class="service-media-title">Klassische Massage</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Massage</span>
+                    <h3 class="service-media-title">Wellness Massage</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Physiotherapie</span>
+                    <h3 class="service-media-title">Manuelle Therapie</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Spezialisiert</span>
+                    <h3 class="service-media-title">CMD</h3>
+                </div>
+            </article>
+
+            <article class="service-media-card">
+                <div class="service-image-placeholder">
+                    <span class="service-image-badge">Bildplatzhalter</span>
+                </div>
+                <div class="service-media-body">
+                    <span class="service-tag">Rehabilitation</span>
+                    <h3 class="service-media-title">Physiotherapie nach Krebsoperation</h3>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="site-shell site-section" id="warum">
+        <div class="max-w-3xl">
+            <span class="section-kicker">Warum KÖ-PHYSIO</span>
+            <h2 class="section-title">Drei Gründe für eine bewusst andere Behandlungssituation.</h2>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <article class="benefit-card">
+                <span class="card-label">Individuelle Betreuung</span>
+                <h3 class="mt-5 text-3xl">Mehr Aufmerksamkeit für Ihren Verlauf.</h3>
+                <p class="mt-4">
+                    Behandlungen werden nicht im Fließbandrhythmus gedacht, sondern mit Blick auf
+                    Befund, Zielsetzung und nachvollziehbare Entwicklung.
+                </p>
+            </article>
+
+            <article class="benefit-card">
+                <span class="card-label">Ruhige Atmosphäre</span>
+                <h3 class="mt-5 text-3xl">Ein konzentrierter Rahmen statt Hektik.</h3>
+                <p class="mt-4">
+                    Die Praxis ist auf Ruhe, Diskretion und Klarheit ausgelegt. Das schafft Vertrauen
+                    und unterstützt eine fokussierte Behandlung.
+                </p>
+            </article>
+
+            <article class="benefit-card">
+                <span class="card-label">Premium Lage</span>
+                <h3 class="mt-5 text-3xl">Mitten auf der Königsallee in Düsseldorf.</h3>
+                <p class="mt-4">
+                    Zentral gelegen, leicht erreichbar und passend für Patientinnen und Patienten,
+                    die Qualität und Umgebung gleichermaßen schätzen.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="site-shell site-section" id="privatpraxis">
+        <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="surface-panel p-7 md:p-10">
+                <span class="section-kicker">Privatpraxis</span>
+                <h2 class="section-title max-w-2xl">Weniger Durchlauf. Mehr Zeit für genaue Behandlung.</h2>
+                <p class="section-lead mt-6">
+                    Als Privatpraxis setzt KÖ-PHYSIO auf einen Rahmen, in dem Qualität, Aufmerksamkeit
+                    und Kontinuität im Mittelpunkt stehen. Das bedeutet keine überladeten Abläufe,
+                    sondern eine Versorgung mit mehr Fokus auf den einzelnen Menschen.
+                </p>
+
+                <ul class="position-list">
+                    <li>
+                        <strong>Mehr Zeit im Termin</strong>
+                        Raum für Anamnese, Befund und Behandlung ohne unnötige Verdichtung.
+                    </li>
+                    <li>
+                        <strong>Gezielte Therapieplanung</strong>
+                        Jede Maßnahme wird in einen nachvollziehbaren Behandlungsverlauf eingeordnet.
+                    </li>
+                    <li>
+                        <strong>Höhere Behandlungsqualität</strong>
+                        Eine ruhige Struktur unterstützt Sorgfalt, Verlässlichkeit und persönliche Begleitung.
+                    </li>
+                </ul>
+            </div>
+
+            <aside class="position-card">
+                <span class="card-label">Für wen die Praxis gedacht ist</span>
+                <h3 class="mt-5 text-3xl">Für Patientinnen und Patienten mit Anspruch an Qualität und Klarheit.</h3>
+                <p class="mt-4">
+                    Besonders passend für Menschen, die bewusst eine private, hochwertige und zentral
+                    gelegene physiotherapeutische Betreuung in Düsseldorf suchen.
+                </p>
+                <p class="mt-6 fine-print">
+                    Inhaltlich bleibt die Sprache zurückhaltend: keine Überversprechen, sondern ein
+                    professioneller Rahmen für sorgfältige physiotherapeutische Arbeit.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <section class="site-shell site-section" id="doctolib">
+        <div class="cta-panel">
+            <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                <div class="max-w-2xl">
+                    <span class="section-kicker">Terminvereinbarung</span>
+                    <h2 class="section-title text-[color:#f5f2ed]">Termine werden komfortabel über Doctolib angefragt.</h2>
+                    <p class="mt-6 text-base leading-8">
+                        Die Online-Buchung soll bewusst einfach und diskret bleiben. Der direkte Praxislink zu
+                        Doctolib kann hier ergänzt werden, sobald das Profil final hinterlegt ist.
+                    </p>
+                    <p class="fine-print mt-4 text-[color:rgba(245,242,237,0.72)]">
+                        Platzhalterhinweis: Der finale Doctolib-Link ist in diesem Entwurf noch nicht hinterlegt.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                    <a class="button-dark" href="https://www.doctolib.de/" target="_blank" rel="noreferrer">Zu Doctolib</a>
+                    <a class="button-dark" href="#kontakt">Kontakt ansehen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="site-shell site-section" id="kontakt">
+        <div class="max-w-3xl">
+            <span class="section-kicker">Kontakt &amp; Standort</span>
+            <h2 class="section-title">Leicht auffindbar, ruhig gelegen, klar strukturiert.</h2>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <article class="contact-card">
+                <span class="card-label">Praxisadresse</span>
+                <h3 class="mt-5 text-3xl">KÖ-PHYSIO</h3>
+                <dl class="contact-list">
+                    <div>
+                        <dt>Adresse</dt>
+                        <dd>Königsallee 66<br>40212 Düsseldorf</dd>
+                    </div>
+                    <div>
+                        <dt>Telefon</dt>
+                        <dd>[Platzhalter]</dd>
+                    </div>
+                    <div>
+                        <dt>E-Mail</dt>
+                        <dd>[Platzhalter]</dd>
+                    </div>
+                </dl>
+            </article>
+
+            <article class="contact-card">
+                <span class="card-label">Informationen</span>
+                <h3 class="mt-5 text-3xl">Für die finale Kontaktsektion vorbereitet.</h3>
+                <dl class="contact-list">
+                    <div>
+                        <dt>Öffnungszeiten</dt>
+                        <dd>[Platzhalter]</dd>
+                    </div>
+                    <div>
+                        <dt>Terminbuchung</dt>
+                        <dd>Online über Doctolib vorgesehen.</dd>
+                    </div>
+                    <div>
+                        <dt>Hinweis</dt>
+                        <dd>Telefon, E-Mail und Öffnungszeiten sind bewusst als Platzhalter markiert, bis die finalen Praxisdaten vorliegen.</dd>
+                    </div>
+                </dl>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-shell site-footer">
+    <p>KÖ-PHYSIO, Privatpraxis für Physiotherapie und orthopädische Behandlungen in Düsseldorf.</p>
+</footer>
 
 <!-- Main JS bundle will be injected by HtmlWebpackPlugin -->
 </body>
