@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth lux-root">
+
+<head>
+    <title>KÖ-PHYSIO | Dark Luxury Variante</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Dark Luxury Homepage-Variante für KÖ-PHYSIO mit markanter, ruhiger und hochwertiger Privatpraxis-Inszenierung."
+    >
+
+    <include src="partials/theme-fouc-guard.html"></include>
+
+    <style>
+        :root {
+            --lux-bg: #0d0f12;
+            --lux-bg-soft: #14181d;
+            --lux-surface: rgba(20, 24, 29, 0.78);
+            --lux-surface-strong: rgba(16, 18, 22, 0.92);
+            --lux-text: #f3f1ed;
+            --lux-text-soft: #b9b1a6;
+            --lux-line: rgba(210, 201, 190, 0.16);
+            --lux-line-strong: rgba(210, 201, 190, 0.26);
+            --lux-accent: #d2c7b8;
+            --lux-accent-deep: #8f8579;
+            --lux-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+            --lux-radius-xl: 30px;
+            --lux-radius-lg: 22px;
+            --lux-container: 1200px;
+            --lux-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+            --lux-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        html.lux-root {
+            background:
+                radial-gradient(circle at top center, rgba(210, 199, 184, 0.09), transparent 26%),
+                linear-gradient(180deg, #111419 0%, #0b0d10 100%);
+        }
+
+        html.lux-root body.lux-page {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--lux-text);
+            font-family: var(--lux-sans);
+            line-height: 1.55;
+            background: transparent;
+        }
+
+        .lux-page * {
+            box-sizing: border-box;
+        }
+
+        .lux-page h1,
+        .lux-page h2,
+        .lux-page h3,
+        .lux-page h4 {
+            margin: 0;
+            font-family: var(--lux-serif);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .lux-page p,
+        .lux-page dl,
+        .lux-page dd {
+            margin: 0;
+        }
+
+        .lux-container {
+            width: min(var(--lux-container), calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .lux-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            border-bottom: 1px solid var(--lux-line);
+            background: rgba(11, 13, 16, 0.78);
+            backdrop-filter: blur(18px);
+        }
+
+        .lux-topbar-inner {
+            min-height: 88px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lux-nav,
+        .lux-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .lux-nav-actions {
+            justify-content: flex-end;
+        }
+
+        .lux-nav a,
+        .lux-nav-actions a {
+            color: var(--lux-text-soft);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .lux-nav a:hover,
+        .lux-nav-actions a:hover {
+            color: var(--lux-text);
+        }
+
+        .lux-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lux-logo img {
+            width: auto;
+            height: 66px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.28));
+        }
+
+        .lux-button {
+            min-height: 50px;
+            padding: 0 22px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+        }
+
+        .lux-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .lux-button-primary {
+            background: linear-gradient(180deg, #efe7db, #cfc2b2);
+            color: #101216;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .lux-button-secondary {
+            border: 1px solid var(--lux-line-strong);
+            color: var(--lux-text);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .lux-hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 56px 0 84px;
+        }
+
+        .lux-hero-grid {
+            display: grid;
+            grid-template-columns: 1.04fr 0.96fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .lux-eyebrow {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--lux-accent);
+        }
+
+        .lux-display {
+            font-size: clamp(58px, 8vw, 102px);
+            line-height: 0.92;
+            max-width: 740px;
+            margin-bottom: 22px;
+        }
+
+        .lux-hero-copy,
+        .lux-section-text,
+        .lux-card-copy,
+        .lux-meta-text {
+            color: var(--lux-text-soft);
+        }
+
+        .lux-hero-copy {
+            max-width: 620px;
+            font-size: 18px;
+            margin-bottom: 34px;
+        }
+
+        .lux-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .lux-trust-list {
+            display: grid;
+            gap: 12px;
+            max-width: 600px;
+        }
+
+        .lux-trust-list div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--lux-text-soft);
+            font-size: 15px;
+        }
+
+        .lux-trust-list div::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, var(--lux-accent), var(--lux-accent-deep));
+            box-shadow: 0 0 0 8px rgba(210, 199, 184, 0.08);
+        }
+
+        .lux-hero-visual {
+            position: relative;
+            padding: 26px;
+            border-radius: var(--lux-radius-xl);
+            border: 1px solid var(--lux-line);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            box-shadow: var(--lux-shadow);
+            overflow: hidden;
+        }
+
+        .lux-hero-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top, rgba(210, 199, 184, 0.18), transparent 44%);
+            pointer-events: none;
+        }
+
+        .lux-visual-frame {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            border-radius: 24px;
+            border: 1px solid var(--lux-line);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)),
+                radial-gradient(circle at top, rgba(210, 199, 184, 0.18), rgba(23, 27, 32, 0.35) 42%, rgba(11, 13, 16, 1) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 26px;
+            overflow: hidden;
+        }
+
+        .lux-visual-frame::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border-radius: 20px;
+            border: 1px dashed rgba(210, 201, 190, 0.16);
+        }
+
+        .lux-visual-card,
+        .lux-hero-note,
+        .lux-panel,
+        .lux-service-card,
+        .lux-benefit-card,
+        .lux-position-card,
+        .lux-contact-card {
+            border: 1px solid var(--lux-line);
+            border-radius: var(--lux-radius-lg);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
+            box-shadow: var(--lux-shadow);
+        }
+
+        .lux-hero-note {
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            max-width: 220px;
+            padding: 18px;
+            backdrop-filter: blur(12px);
+        }
+
+        .lux-hero-note strong,
+        .lux-card-label,
+        .lux-contact-term {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--lux-accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .lux-hero-note p,
+        .lux-visual-card p {
+            color: var(--lux-text-soft);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .lux-visual-card {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            bottom: 24px;
+            padding: 18px 20px;
+            backdrop-filter: blur(14px);
+        }
+
+        .lux-visual-card h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .lux-section {
+            padding: 92px 0;
+        }
+
+        .lux-section-head {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 36px;
+            align-items: end;
+            margin-bottom: 38px;
+        }
+
+        .lux-section-title {
+            font-size: clamp(36px, 4vw, 54px);
+            line-height: 1;
+        }
+
+        .lux-section-text {
+            max-width: 620px;
+            font-size: 16px;
+        }
+
+        .lux-panel {
+            overflow: hidden;
+        }
+
+        .lux-panel-body {
+            padding: 26px;
+        }
+
+        .lux-service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .lux-service-card {
+            overflow: hidden;
+            transition: transform 180ms ease;
+        }
+
+        .lux-service-card:hover,
+        .lux-benefit-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .lux-service-media {
+            position: relative;
+            aspect-ratio: 1.2 / 0.9;
+            border-bottom: 1px solid var(--lux-line);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+                radial-gradient(circle at top, rgba(210, 199, 184, 0.14), rgba(20, 24, 29, 0.8) 52%, rgba(11, 13, 16, 1) 100%);
+        }
+
+        .lux-service-media::before {
+            content: "";
+            position: absolute;
+            inset: 16px;
+            border-radius: 18px;
+            border: 1px dashed rgba(210, 201, 190, 0.18);
+        }
+
+        .lux-service-badge {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 12px;
+            border-radius: 999px;
+            border: 1px solid var(--lux-line-strong);
+            background: rgba(12, 14, 18, 0.72);
+            color: var(--lux-text-soft);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .lux-service-body {
+            padding: 20px;
+        }
+
+        .lux-service-tag {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--lux-accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .lux-service-title {
+            font-size: 28px;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .lux-service-copy {
+            color: var(--lux-text-soft);
+            font-size: 15px;
+        }
+
+        .lux-service-secondary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .lux-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0 16px;
+            border-radius: 999px;
+            border: 1px solid var(--lux-line);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--lux-text-soft);
+            font-size: 14px;
+        }
+
+        .lux-benefit-grid,
+        .lux-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .lux-benefit-card,
+        .lux-contact-card,
+        .lux-position-card {
+            padding: 26px;
+        }
+
+        .lux-benefit-card h3,
+        .lux-position-card h3,
+        .lux-contact-card h3 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .lux-card-copy,
+        .lux-position-list li,
+        .lux-contact-card dd {
+            font-size: 15px;
+            line-height: 1.72;
+        }
+
+        .lux-position-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 20px;
+        }
+
+        .lux-position-list {
+            display: grid;
+            gap: 16px;
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .lux-position-list li {
+            padding-top: 16px;
+            border-top: 1px solid var(--lux-line);
+            color: var(--lux-text-soft);
+        }
+
+        .lux-position-list strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--lux-text);
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .lux-cta {
+            padding: 34px;
+            border-radius: var(--lux-radius-xl);
+            border: 1px solid var(--lux-line);
+            background:
+                radial-gradient(circle at top right, rgba(210, 199, 184, 0.12), transparent 22rem),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+            box-shadow: var(--lux-shadow);
+        }
+
+        .lux-cta-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 28px;
+            align-items: end;
+        }
+
+        .lux-contact-grid {
+            grid-template-columns: 0.95fr 1.05fr;
+        }
+
+        .lux-contact-stack {
+            display: grid;
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .lux-contact-row {
+            padding-top: 14px;
+            border-top: 1px solid var(--lux-line);
+        }
+
+        .lux-contact-card dd {
+            color: var(--lux-text);
+        }
+
+        .lux-footer {
+            padding: 44px 0 70px;
+            color: var(--lux-text-soft);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1100px) {
+            .lux-hero-grid,
+            .lux-service-grid,
+            .lux-benefit-grid,
+            .lux-position-grid,
+            .lux-contact-grid,
+            .lux-section-head,
+            .lux-cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .lux-topbar-inner {
+                grid-template-columns: 1fr;
+                padding: 16px 0;
+            }
+
+            .lux-nav,
+            .lux-nav-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .lux-nav {
+                order: 2;
+            }
+
+            .lux-logo {
+                order: 1;
+            }
+
+            .lux-nav-actions {
+                order: 3;
+            }
+
+            .lux-hero {
+                min-height: auto;
+                padding-top: 34px;
+            }
+
+            .lux-section {
+                padding: 74px 0;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .lux-container {
+                width: min(var(--lux-container), calc(100% - 22px));
+            }
+
+            .lux-logo img {
+                height: 58px;
+            }
+
+            .lux-display {
+                font-size: clamp(46px, 15vw, 72px);
+            }
+
+            .lux-service-title,
+            .lux-benefit-card h3,
+            .lux-position-card h3,
+            .lux-contact-card h3,
+            .lux-visual-card h2 {
+                font-size: 28px;
+            }
+
+            .lux-hero-note {
+                position: static;
+                max-width: none;
+                margin-top: 16px;
+            }
+
+            .lux-visual-card {
+                position: static;
+                margin-top: 18px;
+            }
+
+            .lux-visual-frame {
+                padding: 18px;
+                aspect-ratio: 1 / 1.15;
+                align-items: stretch;
+                justify-content: flex-end;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- Link to main CSS will be injected here by HtmlWebpackPlugin -->
+</head>
+
+<body class="lux-page">
+<header class="lux-topbar">
+    <div class="lux-container lux-topbar-inner">
+        <nav class="lux-nav" aria-label="Primäre Navigation">
+            <a href="#leistungen">Leistungen</a>
+            <a href="#warum">Warum KÖ-PHYSIO</a>
+            <a href="#privatpraxis">Privatpraxis</a>
+        </nav>
+
+        <a class="lux-logo" href="#top" aria-label="KÖ-PHYSIO Startseite">
+            <img
+                src="https://d3thl45e1l81vj.cloudfront.net/logos/koephysio-logo-grey-diagonal-gradiant.png"
+                alt="KÖ-PHYSIO Privat Logo"
+            >
+        </a>
+
+        <div class="lux-nav-actions">
+            <a href="#kontakt">Kontakt</a>
+            <a class="lux-button lux-button-primary" href="#doctolib">Termin buchen</a>
+        </div>
+    </div>
+</header>
+
+<main id="top">
+    <section class="lux-hero">
+        <div class="lux-container lux-hero-grid">
+            <div>
+                <span class="lux-eyebrow">Dark Luxury Variante · Privatpraxis Düsseldorf</span>
+                <h1 class="lux-display">Dunkler. Präziser. Noch entschiedener privat.</h1>
+                <p class="lux-hero-copy">
+                    Diese Variante übersetzt KÖ-PHYSIO in eine markantere, exklusive Bildsprache:
+                    ruhig, medizinisch klar und bewusst hochwertig. Weniger freundlich, mehr Haltung.
+                </p>
+
+                <div class="lux-actions">
+                    <a class="lux-button lux-button-primary" href="#doctolib">Termin buchen</a>
+                    <a class="lux-button lux-button-secondary" href="#leistungen">Leistungen ansehen</a>
+                </div>
+
+                <div class="lux-trust-list">
+                    <div>Privatpraxis mit persönlicher Betreuung statt standardisiertem Durchlauf.</div>
+                    <div>Behandlungen mit orthopädischem, rehabilitativem und funktionellem Fokus.</div>
+                    <div>Königsallee 66, 40212 Düsseldorf als premiumgerechter Praxisstandort.</div>
+                </div>
+            </div>
+
+            <div class="lux-hero-visual">
+                <div class="lux-visual-frame">
+                    <div class="lux-hero-note">
+                        <strong>Praxisprofil</strong>
+                        <p>High-end clinic statt Wellness-Look. Dunkle Bühne, leise Haltung, konzentrierte Wirkung.</p>
+                    </div>
+
+                    <div class="lux-visual-card">
+                        <span class="lux-card-label">Visual Placeholder</span>
+                        <h2>Raum für dunkle Praxisfotografie, Detailaufnahme oder Logo-Inszenierung</h2>
+                        <p>Gedacht für hochwertige Architektur-, Interieur- oder Behandlungsdetails mit reduziertem klinischem Charakter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lux-section" id="leistungen">
+        <div class="lux-container">
+            <div class="lux-section-head">
+                <div>
+                    <span class="lux-eyebrow">01 · Leistungen</span>
+                    <h2 class="lux-section-title">Kuratiert für eine dunklere, exklusivere Praxiswirkung.</h2>
+                </div>
+                <p class="lux-section-text">
+                    Statt einer lauten Gesamtliste zeigt diese Variante zuerst die Leistungen, die die
+                    medizinische Präzision und das private Qualitätsversprechen am stärksten tragen.
+                </p>
+            </div>
+
+            <div class="lux-service-grid">
+                <article class="lux-service-card">
+                    <div class="lux-service-media">
+                        <span class="lux-service-badge">Bild Placeholder</span>
+                    </div>
+                    <div class="lux-service-body">
+                        <span class="lux-service-tag">Physiotherapie</span>
+                        <h3 class="lux-service-title">Manuelle Therapie</h3>
+                        <p class="lux-service-copy">Präzise Behandlung bei funktionellen Beschwerden des Bewegungsapparats mit ruhiger, individueller Führung.</p>
+                    </div>
+                </article>
+
+                <article class="lux-service-card">
+                    <div class="lux-service-media">
+                        <span class="lux-service-badge">Bild Placeholder</span>
+                    </div>
+                    <div class="lux-service-body">
+                        <span class="lux-service-tag">Rehabilitation</span>
+                        <h3 class="lux-service-title">Neurologische Behandlung KG (ZNS)</h3>
+                        <p class="lux-service-copy">Für komplexere funktionelle Anforderungen mit persönlicher Begleitung und strukturierter Therapieplanung.</p>
+                    </div>
+                </article>
+
+                <article class="lux-service-card">
+                    <div class="lux-service-media">
+                        <span class="lux-service-badge">Bild Placeholder</span>
+                    </div>
+                    <div class="lux-service-body">
+                        <span class="lux-service-tag">Spezialisiert</span>
+                        <h3 class="lux-service-title">CMD</h3>
+                        <p class="lux-service-copy">Fokussierte physiotherapeutische Behandlung bei funktionellen Beschwerden im Kiefer-, Kopf- und Nackenbereich.</p>
+                    </div>
+                </article>
+
+                <article class="lux-service-card">
+                    <div class="lux-service-media">
+                        <span class="lux-service-badge">Bild Placeholder</span>
+                    </div>
+                    <div class="lux-service-body">
+                        <span class="lux-service-tag">Spezialisiert</span>
+                        <h3 class="lux-service-title">Manuelle Lymphdrainage</h3>
+                        <p class="lux-service-copy">Ruhige, differenzierte Behandlung als ergänzender Bestandteil individueller therapeutischer Konzepte.</p>
+                    </div>
+                </article>
+
+                <article class="lux-service-card">
+                    <div class="lux-service-media">
+                        <span class="lux-service-badge">Bild Placeholder</span>
+                    </div>
+                    <div class="lux-service-body">
+                        <span class="lux-service-tag">Training</span>
+                        <h3 class="lux-service-title">Sportphysiotherapie</h3>
+                        <p class="lux-service-copy">Für aktive Patientinnen und Patienten mit Anspruch an Belastbarkeit, Präzision und nachhaltige Rückkehr in Bewegung.</p>
+                    </div>
+                </article>
+
+                <article class="lux-service-card">
+                    <div class="lux-service-media">
+                        <span class="lux-service-badge">Bild Placeholder</span>
+                    </div>
+                    <div class="lux-service-body">
+                        <span class="lux-service-tag">Rehabilitation</span>
+                        <h3 class="lux-service-title">Physiotherapie nach Krebsoperation</h3>
+                        <p class="lux-service-copy">Zurückhaltende, sorgfältige Begleitung in sensiblen postoperativen Behandlungsphasen.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="lux-panel" style="margin-top:22px;">
+                <div class="lux-panel-body">
+                    <span class="lux-card-label">Weitere Leistungen</span>
+                    <p class="lux-meta-text">Krankengymnastik, Atemtherapie, Trigger-Punkt-Massage, Heißluft, Personal Training, Beckenbodentraining, Klassische Massage und Wellness Massage können in dieser Variante ergänzend dargestellt werden.</p>
+                    <div class="lux-service-secondary">
+                        <span class="lux-pill">Krankengymnastik</span>
+                        <span class="lux-pill">Atemtherapie</span>
+                        <span class="lux-pill">Trigger-Punkt-Massage</span>
+                        <span class="lux-pill">Heißluft</span>
+                        <span class="lux-pill">Personal Training</span>
+                        <span class="lux-pill">Beckenbodentraining</span>
+                        <span class="lux-pill">Klassische Massage</span>
+                        <span class="lux-pill">Wellness Massage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lux-section" id="warum">
+        <div class="lux-container">
+            <div class="lux-section-head">
+                <div>
+                    <span class="lux-eyebrow">02 · Warum KÖ-PHYSIO</span>
+                    <h2 class="lux-section-title">Die dunkle Variante betont Haltung statt Gefälligkeit.</h2>
+                </div>
+                <p class="lux-section-text">
+                    Diese Richtung funktioniert besonders dann, wenn die Praxis weniger Standard und
+                    mehr Souveränität kommunizieren möchte. Sie ist mutiger, aber auch unverwechselbarer.
+                </p>
+            </div>
+
+            <div class="lux-benefit-grid">
+                <article class="lux-benefit-card">
+                    <span class="lux-card-label">Individuelle Betreuung</span>
+                    <h3>Mehr Fokus auf den einzelnen Verlauf.</h3>
+                    <p class="lux-card-copy">Behandlungen orientieren sich nicht am Takt, sondern an Befund, Entwicklung und nachvollziehbarer Therapieplanung.</p>
+                </article>
+
+                <article class="lux-benefit-card">
+                    <span class="lux-card-label">Ruhige Atmosphäre</span>
+                    <h3>Weniger Unruhe. Mehr Konzentration.</h3>
+                    <p class="lux-card-copy">Die visuelle Sprache und die räumliche Haltung unterstreichen Diskretion, Ruhe und eine hochwertige Behandlungssituation.</p>
+                </article>
+
+                <article class="lux-benefit-card">
+                    <span class="lux-card-label">Königsallee</span>
+                    <h3>Ein Standort mit passender Wertigkeit.</h3>
+                    <p class="lux-card-copy">Die Lage auf der Königsallee transportiert Qualität, Erreichbarkeit und eine Umgebung, die zum Premiumanspruch der Praxis passt.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="lux-section" id="privatpraxis">
+        <div class="lux-container">
+            <div class="lux-position-grid">
+                <article class="lux-position-card">
+                    <span class="lux-eyebrow">03 · Privatpraxis</span>
+                    <h2 class="lux-section-title">Weniger Masse. Mehr Zeit. Mehr Qualität.</h2>
+                    <p class="lux-section-text" style="margin-top:22px;">
+                        Als Privatpraxis schafft KÖ-PHYSIO einen Rahmen, in dem Behandlung wieder sorgfältiger,
+                        persönlicher und stringenter geführt werden kann. Genau das wird in dieser dunklen
+                        Variante besonders stark betont.
+                    </p>
+
+                    <ul class="lux-position-list">
+                        <li>
+                            <strong>Mehr Raum im Termin</strong>
+                            Für Anamnese, differenzierte Befundung und eine Behandlung, die nicht unter Zeitdruck sichtbar verkürzt wird.
+                        </li>
+                        <li>
+                            <strong>Klarere therapeutische Linie</strong>
+                            Maßnahmen werden in einen nachvollziehbaren Verlauf eingeordnet statt isoliert abgearbeitet.
+                        </li>
+                        <li>
+                            <strong>Hochwertigeres Gesamtgefühl</strong>
+                            Die Kombination aus Betreuung, Ruhe und Inszenierung lässt die Praxis souveräner und exklusiver wirken.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="lux-position-card">
+                    <span class="lux-card-label">Einordnung der Variante</span>
+                    <h3>Markanter als die helle Version, aber weiterhin medizinisch präzise.</h3>
+                    <p class="lux-card-copy">Diese Richtung vermeidet Wellness-Klischees und Startup-Optik. Sie wirkt hochwertig, diskret und etwas strenger, ohne arrogant zu werden.</p>
+                    <p class="lux-meta-text" style="margin-top:18px;">Ideal, wenn die Marke stärker als exklusive Privatpraxis mit Haltung und weniger als sanfte Standard-Physioseite auftreten soll.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="lux-section" id="doctolib">
+        <div class="lux-container">
+            <div class="lux-cta">
+                <div class="lux-cta-grid">
+                    <div>
+                        <span class="lux-eyebrow">04 · Terminvereinbarung</span>
+                        <h2 class="lux-section-title">Doctolib bleibt klar sichtbar, aber nie billig inszeniert.</h2>
+                        <p class="lux-section-text" style="margin-top:18px;">
+                            Die Buchung wird auch in der Dark-Variante bewusst ruhig geführt: als vertrauenswürdige
+                            Einladung, nicht als aggressive Conversion-Fläche. Der finale Praxislink kann hier ergänzt werden.
+                        </p>
+                    </div>
+
+                    <div class="lux-actions" style="margin:0;">
+                        <a class="lux-button lux-button-primary" href="https://www.doctolib.de/" target="_blank" rel="noreferrer">Zu Doctolib</a>
+                        <a class="lux-button lux-button-secondary" href="#kontakt">Kontakt ansehen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lux-section" id="kontakt">
+        <div class="lux-container">
+            <div class="lux-section-head">
+                <div>
+                    <span class="lux-eyebrow">05 · Kontakt & Standort</span>
+                    <h2 class="lux-section-title">Präsentiert wie eine diskrete Privatadresse.</h2>
+                </div>
+                <p class="lux-section-text">
+                    Auch der Kontaktbereich bleibt reduziert und hochwertig. Die fehlenden Angaben sind bewusst
+                    als Platzhalter markiert, bis die finalen Praxisdaten vollständig vorliegen.
+                </p>
+            </div>
+
+            <div class="lux-contact-grid">
+                <article class="lux-contact-card">
+                    <span class="lux-card-label">Praxisadresse</span>
+                    <h3>KÖ-PHYSIO</h3>
+                    <div class="lux-contact-stack">
+                        <div class="lux-contact-row">
+                            <span class="lux-contact-term">Adresse</span>
+                            <dd>Königsallee 66<br>40212 Düsseldorf</dd>
+                        </div>
+                        <div class="lux-contact-row">
+                            <span class="lux-contact-term">Telefon</span>
+                            <dd>[Platzhalter]</dd>
+                        </div>
+                        <div class="lux-contact-row">
+                            <span class="lux-contact-term">E-Mail</span>
+                            <dd>[Platzhalter]</dd>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lux-contact-card">
+                    <span class="lux-card-label">Weitere Angaben</span>
+                    <h3>Vorbereitet für die finale Veröffentlichung.</h3>
+                    <div class="lux-contact-stack">
+                        <div class="lux-contact-row">
+                            <span class="lux-contact-term">Öffnungszeiten</span>
+                            <dd>[Platzhalter]</dd>
+                        </div>
+                        <div class="lux-contact-row">
+                            <span class="lux-contact-term">Terminbuchung</span>
+                            <dd>Online über Doctolib vorgesehen.</dd>
+                        </div>
+                        <div class="lux-contact-row">
+                            <span class="lux-contact-term">Hinweis</span>
+                            <dd>Telefon, E-Mail und Öffnungszeiten werden nach finaler Abstimmung ergänzt.</dd>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="lux-footer">
+    <div class="lux-container">
+        Dark Luxury Homepage-Variante für KÖ-PHYSIO · Präsentation unter `/styleguides/styleguide-dark.html`.
+    </div>
+</footer>
+
+<!-- Main JS bundle will be injected by HtmlWebpackPlugin -->
+</body>
+
+</html>

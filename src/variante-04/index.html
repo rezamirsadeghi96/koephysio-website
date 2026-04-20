@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <title>KÖ-PHYSIO | Variante 04</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Homepage Variante 04 für KÖ-PHYSIO mit der Struktur einer modernen Physio-Referenzseite: klar, serviceorientiert und hochwertig."
+    >
+
+    <include src="partials/theme-fouc-guard.html"></include>
+
+    <style>
+        :root {
+            --v4-bg: #f6f8f6;
+            --v4-surface: #ffffff;
+            --v4-surface-soft: #edf4f2;
+            --v4-surface-mint: #e1efec;
+            --v4-surface-sand: #f3ede3;
+            --v4-text: #203038;
+            --v4-text-soft: #667880;
+            --v4-line: rgba(77, 120, 127, 0.12);
+            --v4-line-strong: rgba(77, 120, 127, 0.24);
+            --v4-accent: #3f7b85;
+            --v4-accent-soft: #81aab1;
+            --v4-gold: #b98e4f;
+            --v4-shadow: 0 24px 72px -42px rgba(32, 48, 56, 0.24);
+            --v4-radius-xl: 32px;
+            --v4-radius-lg: 24px;
+            --v4-radius-md: 18px;
+            --v4-container: 1180px;
+            --v4-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Baskerville", "Times New Roman", ui-serif, serif;
+            --v4-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        html {
+            background: linear-gradient(180deg, #fbfcfa 0%, #f3f7f4 46%, #f8f7f2 100%);
+            overflow-x: hidden;
+        }
+
+        html.dark {
+            --v4-bg: #0f171a;
+            --v4-surface: #152126;
+            --v4-surface-soft: #1a2a30;
+            --v4-surface-mint: #163038;
+            --v4-surface-sand: #2a241d;
+            --v4-text: #edf3f1;
+            --v4-text-soft: #aac0c5;
+            --v4-line: rgba(129, 170, 177, 0.18);
+            --v4-line-strong: rgba(129, 170, 177, 0.28);
+            --v4-accent: #8fc2cb;
+            --v4-accent-soft: #648d95;
+            --v4-gold: #d2ab71;
+            --v4-shadow: 0 26px 80px -42px rgba(0, 0, 0, 0.62);
+            background: linear-gradient(180deg, #10181b 0%, #0d1417 46%, #121618 100%);
+        }
+
+        body.variant-four {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--v4-text);
+            font-family: var(--v4-sans);
+            line-height: 1.55;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at top left, rgba(129, 170, 177, 0.14), transparent 22rem),
+                radial-gradient(circle at top right, rgba(243, 237, 227, 0.78), transparent 18rem),
+                transparent;
+        }
+
+        html.dark body.variant-four {
+            background:
+                radial-gradient(circle at top left, rgba(129, 170, 177, 0.12), transparent 24rem),
+                radial-gradient(circle at top right, rgba(185, 142, 79, 0.12), transparent 18rem),
+                var(--v4-bg);
+        }
+
+        .variant-four * {
+            box-sizing: border-box;
+        }
+
+        .variant-four h1,
+        .variant-four h2,
+        .variant-four h3,
+        .variant-four h4 {
+            margin: 0;
+            font-family: var(--v4-serif);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+        }
+
+        .variant-four p,
+        .variant-four dl,
+        .variant-four dd {
+            margin: 0;
+        }
+
+        .v4-container {
+            width: min(var(--v4-container), calc(100% - 28px));
+            margin: 0 auto;
+        }
+
+        .v4-container,
+        .v4-hero > *,
+        .v4-info-grid > *,
+        .v4-section-head > *,
+        .v4-help-grid > *,
+        .v4-gallery-wrap > *,
+        .v4-gallery-grid > *,
+        .v4-steps-wrap > *,
+        .v4-step-grid > *,
+        .v4-mid-cta > *,
+        .v4-service-grid > *,
+        .v4-contact-grid > *,
+        .v4-footer-grid > *,
+        .v4-footer-links > * {
+            min-width: 0;
+        }
+
+        .v4-utility {
+            border-bottom: 1px solid var(--v4-line);
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(16px);
+        }
+
+        .v4-utility-inner {
+            min-height: 56px;
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            gap: 20px;
+            color: var(--v4-text-soft);
+            font-size: 14px;
+        }
+
+        .v4-utility-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 14px;
+            border-radius: 999px;
+            background: rgba(239, 245, 242, 0.9);
+            border: 1px solid rgba(77, 120, 127, 0.08);
+        }
+
+        .v4-header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            padding-top: 14px;
+            background: linear-gradient(180deg, rgba(246, 248, 246, 0.95), rgba(246, 248, 246, 0.76));
+            backdrop-filter: blur(18px);
+        }
+
+        .v4-nav-shell {
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.84);
+            box-shadow: var(--v4-shadow);
+        }
+
+        .v4-nav {
+            min-height: 82px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .v4-nav-links,
+        .v4-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .v4-nav-actions {
+            justify-content: flex-end;
+        }
+
+        .v4-nav a {
+            color: var(--v4-text-soft);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .v4-nav a:hover {
+            color: var(--v4-text);
+        }
+
+        .v4-mobile-nav {
+            display: none;
+        }
+
+        .v4-theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0 16px;
+            border-radius: 999px;
+            border: 1px solid var(--v4-line-strong);
+            background: rgba(255, 255, 255, 0.76);
+            color: var(--v4-text);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .v4-logo {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .v4-logo img {
+            width: auto;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .v4-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            max-width: 100%;
+            padding: 0 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+        }
+
+        .v4-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .v4-button-primary {
+            background: linear-gradient(180deg, var(--v4-accent), #356a73);
+            color: #f8fbfa;
+            box-shadow: 0 18px 34px -24px rgba(63, 123, 133, 0.78);
+        }
+
+        .v4-button-secondary {
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid var(--v4-line-strong);
+            color: var(--v4-text);
+        }
+
+        .v4-mobile-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 999px;
+            border: 1px solid var(--v4-line-strong);
+            background: rgba(255, 255, 255, 0.82);
+            color: var(--v4-text);
+            cursor: pointer;
+        }
+
+        .v4-mobile-toggle::marker,
+        .v4-mobile-toggle::-webkit-details-marker {
+            display: none;
+        }
+
+        .v4-burger {
+            display: grid;
+            gap: 5px;
+        }
+
+        .v4-burger span {
+            width: 18px;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--v4-text);
+            transition: transform 180ms ease, opacity 180ms ease;
+        }
+
+        .v4-mobile-nav[open] .v4-burger span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .v4-mobile-nav[open] .v4-burger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .v4-mobile-nav[open] .v4-burger span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .v4-mobile-menu {
+            display: grid;
+            gap: 10px;
+            padding: 14px 0 0;
+        }
+
+        .v4-mobile-menu a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            border-radius: 18px;
+            background: rgba(239, 245, 242, 0.82);
+            border: 1px solid rgba(63, 123, 133, 0.1);
+            color: var(--v4-text);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .v4-mobile-menu .v4-button {
+            width: 100%;
+        }
+
+        html.dark .v4-utility {
+            background: rgba(16, 24, 27, 0.82);
+            border-bottom-color: var(--v4-line);
+        }
+
+        html.dark .v4-utility-pill,
+        html.dark .v4-nav-shell,
+        html.dark .v4-mobile-toggle,
+        html.dark .v4-theme-toggle,
+        html.dark .v4-mobile-menu a,
+        html.dark .v4-button-secondary,
+        html.dark .v4-info-panel,
+        html.dark .v4-help-card,
+        html.dark .v4-step-card,
+        html.dark .v4-service-card,
+        html.dark .v4-contact-panel,
+        html.dark .v4-faq-card,
+        html.dark .v4-footer-shell,
+        html.dark .v4-gallery-panel,
+        html.dark .v4-mid-cta,
+        html.dark .v4-card {
+            background: rgba(21, 33, 38, 0.88);
+            border-color: rgba(129, 170, 177, 0.14);
+        }
+
+        html.dark .v4-header {
+            background: linear-gradient(180deg, rgba(15, 23, 26, 0.95), rgba(15, 23, 26, 0.76));
+        }
+
+        html.dark .v4-hero-panel,
+        html.dark .v4-footer-shell,
+        html.dark .v4-mid-cta {
+            background:
+                radial-gradient(circle at top right, rgba(129, 170, 177, 0.14), transparent 18rem),
+                linear-gradient(180deg, rgba(21, 33, 38, 0.94), rgba(17, 26, 30, 0.9));
+        }
+
+        html.dark .v4-image-copy,
+        html.dark .v4-badge,
+        html.dark .v4-service-media span,
+        html.dark .v4-gallery-item span,
+        html.dark .v4-map-stage span {
+            background: rgba(17, 26, 30, 0.84);
+            color: var(--v4-text);
+        }
+
+        html.dark .v4-image-stage,
+        html.dark .v4-service-media,
+        html.dark .v4-map-stage,
+        html.dark .v4-gallery-item {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+                linear-gradient(135deg, rgba(22, 48, 56, 0.92), rgba(33, 42, 45, 0.9));
+        }
+
+        html.dark .v4-marquee {
+            border-color: rgba(129, 170, 177, 0.14);
+            background: linear-gradient(90deg, rgba(42, 36, 29, 0.9), rgba(22, 48, 56, 0.92), rgba(42, 36, 29, 0.9));
+        }
+
+        html.dark .v4-icon {
+            background: linear-gradient(180deg, rgba(129, 170, 177, 0.18), rgba(22, 48, 56, 0.84));
+            border-color: rgba(129, 170, 177, 0.12);
+        }
+
+        html.dark .v4-service-media::after {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+        }
+
+        html.dark .v4-help-card:hover,
+        html.dark .v4-step-card:hover,
+        html.dark .v4-contact-panel:hover,
+        html.dark .v4-faq-card:hover,
+        html.dark .v4-mid-cta:hover,
+        html.dark .v4-info-panel:hover {
+            border-color: rgba(143, 194, 203, 0.28);
+            box-shadow: 0 28px 82px -42px rgba(0, 0, 0, 0.72);
+        }
+
+        .v4-page {
+            padding: 34px 0 96px;
+        }
+
+        .v4-section.effects-container,
+        .v4-info-grid.effects-container,
+        .v4-footer.effects-container,
+        .v4-hero.effects-container {
+            --v4-stagger-step: 120ms;
+        }
+
+        .v4-reveal,
+        .v4-reveal-left,
+        .v4-reveal-right,
+        .v4-reveal-card {
+            opacity: 0;
+            transition:
+                opacity 800ms ease,
+                transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 220ms ease,
+                border-color 220ms ease;
+            will-change: opacity, transform;
+        }
+
+        .v4-reveal,
+        .v4-reveal-card {
+            transform: translateY(28px);
+        }
+
+        .v4-reveal-left {
+            transform: translate3d(-28px, 22px, 0);
+        }
+
+        .v4-reveal-right {
+            transform: translate3d(28px, 22px, 0);
+        }
+
+        .effects-active .v4-reveal,
+        .effects-active .v4-reveal-left,
+        .effects-active .v4-reveal-right,
+        .effects-active .v4-reveal-card {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .effects-active .v4-stagger-1 { transition-delay: calc(var(--v4-stagger-step) * 1); }
+        .effects-active .v4-stagger-2 { transition-delay: calc(var(--v4-stagger-step) * 2); }
+        .effects-active .v4-stagger-3 { transition-delay: calc(var(--v4-stagger-step) * 3); }
+        .effects-active .v4-stagger-4 { transition-delay: calc(var(--v4-stagger-step) * 4); }
+        .effects-active .v4-stagger-5 { transition-delay: calc(var(--v4-stagger-step) * 5); }
+        .effects-active .v4-stagger-6 { transition-delay: calc(var(--v4-stagger-step) * 6); }
+
+        @keyframes v4Float {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -10px, 0); }
+        }
+
+        @keyframes v4SoftPulse {
+            0%, 100% { transform: scale(1); opacity: 0.92; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+
+        @keyframes v4Marquee {
+            from { transform: translate3d(0, 0, 0); }
+            to { transform: translate3d(-50%, 0, 0); }
+        }
+
+        .v4-section {
+            padding-top: 92px;
+        }
+
+        .v4-hero {
+            display: grid;
+            grid-template-columns: 1.04fr 0.96fr;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .v4-card,
+        .v4-hero-panel,
+        .v4-image-panel,
+        .v4-info-panel,
+        .v4-help-card,
+        .v4-step-card,
+        .v4-service-card,
+        .v4-contact-panel,
+        .v4-faq-card,
+        .v4-footer-shell,
+        .v4-gallery-panel,
+        .v4-mid-cta {
+            border: 1px solid rgba(255, 255, 255, 0.82);
+            border-radius: var(--v4-radius-xl);
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: var(--v4-shadow);
+        }
+
+        .v4-hero-panel {
+            padding: 36px;
+            background:
+                radial-gradient(circle at top right, rgba(129, 170, 177, 0.18), transparent 18rem),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 248, 0.88));
+        }
+
+        .v4-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            color: var(--v4-accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .v4-kicker::before {
+            content: "";
+            width: 36px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--v4-accent), rgba(63, 123, 133, 0));
+        }
+
+        .v4-display {
+            font-size: clamp(52px, 8vw, 92px);
+            line-height: 0.93;
+            max-width: 12ch;
+            margin-bottom: 18px;
+            overflow-wrap: anywhere;
+        }
+
+        .v4-lead,
+        .v4-text {
+            color: var(--v4-text-soft);
+        }
+
+        .v4-lead {
+            max-width: 52ch;
+            font-size: 18px;
+            margin-bottom: 26px;
+        }
+
+        .v4-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .v4-image-panel {
+            padding: 18px;
+            overflow: hidden;
+        }
+
+        .v4-image-stage {
+            position: relative;
+            min-height: 500px;
+            border-radius: calc(var(--v4-radius-xl) - 10px);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+                linear-gradient(135deg, rgba(129, 170, 177, 0.26), rgba(225, 239, 236, 0.88));
+            overflow: hidden;
+        }
+
+        .effects-active .v4-image-stage {
+            animation: v4Float 8s ease-in-out infinite;
+        }
+
+        .v4-image-stage::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border-radius: 24px;
+            border: 1px dashed rgba(63, 123, 133, 0.2);
+        }
+
+        .v4-badge {
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.86);
+            color: var(--v4-text);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .v4-image-copy {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            padding: 20px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.84);
+            backdrop-filter: blur(12px);
+        }
+
+        .v4-image-copy h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            overflow-wrap: anywhere;
+        }
+
+        .v4-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .v4-info-panel {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+        .v4-info-label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--v4-accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .v4-info-panel p {
+            color: var(--v4-text);
+            font-size: 15px;
+        }
+
+        .v4-marquee {
+            margin-top: 34px;
+            overflow: hidden;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: linear-gradient(90deg, var(--v4-sand), rgba(225, 239, 236, 0.9), var(--v4-sand));
+            box-shadow: var(--v4-shadow);
+        }
+
+        .v4-marquee-track {
+            display: flex;
+            gap: 38px;
+            padding: 18px 22px;
+            white-space: nowrap;
+            color: var(--v4-accent);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            width: max-content;
+            animation: v4Marquee 28s linear infinite;
+        }
+
+        .v4-marquee:hover .v4-marquee-track {
+            animation-play-state: paused;
+        }
+
+        .v4-section-head {
+            display: grid;
+            grid-template-columns: 1fr 0.96fr;
+            gap: 28px;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+        .v4-section-title {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 0.96;
+            overflow-wrap: anywhere;
+        }
+
+        .v4-help-grid,
+        .v4-service-grid,
+        .v4-contact-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .v4-help-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .v4-help-card,
+        .v4-step-card,
+        .v4-service-card,
+        .v4-contact-panel {
+            padding: 22px;
+        }
+
+        .v4-icon {
+            width: 58px;
+            height: 58px;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, rgba(129, 170, 177, 0.24), rgba(225, 239, 236, 0.82));
+            border: 1px solid rgba(63, 123, 133, 0.1);
+        }
+
+        .v4-help-card h3,
+        .v4-step-card h3,
+        .v4-service-card h3,
+        .v4-contact-panel h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .v4-help-card p,
+        .v4-step-card p,
+        .v4-service-card p,
+        .v4-contact-panel p {
+            color: var(--v4-text-soft);
+            font-size: 15px;
+        }
+
+        .v4-help-card:hover,
+        .v4-step-card:hover,
+        .v4-contact-panel:hover,
+        .v4-faq-card:hover,
+        .v4-mid-cta:hover,
+        .v4-info-panel:hover {
+            border-color: rgba(63, 123, 133, 0.22);
+            box-shadow: 0 28px 76px -42px rgba(32, 48, 56, 0.3);
+        }
+
+        .v4-help-card:hover .v4-icon {
+            animation: v4SoftPulse 1.8s ease-in-out infinite;
+        }
+
+        .v4-gallery-wrap {
+            display: grid;
+            grid-template-columns: 0.98fr 1.02fr;
+            gap: 16px;
+        }
+
+        .v4-gallery-panel {
+            padding: 18px;
+        }
+
+        .v4-gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .v4-gallery-tall {
+            min-height: 470px;
+        }
+
+        .v4-gallery-stack {
+            display: grid;
+            gap: 16px;
+        }
+
+        .v4-gallery-item {
+            position: relative;
+            min-height: 220px;
+            border-radius: 26px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+                linear-gradient(135deg, rgba(225, 239, 236, 0.98), rgba(243, 237, 227, 0.82));
+            overflow: hidden;
+            transition: transform 260ms ease, box-shadow 260ms ease;
+        }
+
+        .v4-gallery-item::before {
+            content: "";
+            position: absolute;
+            inset: 16px;
+            border-radius: 20px;
+            border: 1px dashed rgba(63, 123, 133, 0.18);
+        }
+
+        .v4-gallery-item span {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--v4-text);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .v4-gallery-item:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 28px 76px -44px rgba(32, 48, 56, 0.34);
+        }
+
+        .v4-steps-wrap {
+            display: grid;
+            grid-template-columns: 0.92fr 1.08fr;
+            gap: 18px;
+        }
+
+        .v4-card {
+            padding: 28px;
+        }
+
+        .v4-step-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .v4-step-number {
+            display: inline-flex;
+            width: 38px;
+            height: 38px;
+            margin-bottom: 16px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            background: rgba(63, 123, 133, 0.12);
+            color: var(--v4-accent);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .v4-mid-cta {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: center;
+            padding: 28px;
+            background:
+                radial-gradient(circle at right top, rgba(129, 170, 177, 0.18), transparent 16rem),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 248, 0.88));
+        }
+
+        .v4-service-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .v4-service-card {
+            overflow: hidden;
+            padding: 0;
+            transition: transform 180ms ease;
+        }
+
+        .v4-service-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .v4-service-media {
+            position: relative;
+            aspect-ratio: 1.26 / 0.84;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+                linear-gradient(135deg, rgba(129, 170, 177, 0.24), rgba(225, 239, 236, 0.86));
+            overflow: hidden;
+        }
+
+        .v4-service-media::before {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            border-radius: 18px;
+            border: 1px dashed rgba(63, 123, 133, 0.18);
+        }
+
+        .v4-service-media::after {
+            content: "";
+            position: absolute;
+            inset: -20% auto -20% -40%;
+            width: 34%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
+            transform: rotate(18deg) translateX(-180%);
+            transition: transform 700ms ease;
+        }
+
+        .v4-service-media span {
+            position: absolute;
+            left: 14px;
+            top: 14px;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 0 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--v4-text);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .v4-service-card:hover .v4-service-media::after {
+            transform: rotate(18deg) translateX(420%);
+        }
+
+        .v4-service-body {
+            padding: 20px;
+        }
+
+        .v4-service-tag {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: var(--v4-accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .v4-contact-grid {
+            grid-template-columns: 1.02fr 0.98fr;
+        }
+
+        .v4-map-stage {
+            position: relative;
+            min-height: 420px;
+            border-radius: 26px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+                linear-gradient(135deg, rgba(225, 239, 236, 0.96), rgba(243, 237, 227, 0.82));
+            overflow: hidden;
+        }
+
+        .v4-map-stage::before {
+            content: "";
+            position: absolute;
+            inset: 16px;
+            border-radius: 22px;
+            border: 1px dashed rgba(63, 123, 133, 0.18);
+        }
+
+        .v4-map-stage span {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.84);
+            color: var(--v4-text);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .v4-contact-stack {
+            display: grid;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .v4-contact-row {
+            padding-top: 14px;
+            border-top: 1px solid rgba(63, 123, 133, 0.1);
+        }
+
+        .v4-contact-row strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--v4-accent);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .v4-contact-row span {
+            color: var(--v4-text);
+            font-size: 15px;
+        }
+
+        .v4-faq-wrap {
+            display: grid;
+            gap: 14px;
+        }
+
+        .v4-faq-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .v4-faq-card details {
+            padding: 22px;
+        }
+
+        .v4-faq-card summary {
+            list-style: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--v4-text);
+        }
+
+        .v4-faq-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .v4-faq-card p {
+            margin-top: 12px;
+            color: var(--v4-text-soft);
+            font-size: 15px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .v4-reveal,
+            .v4-reveal-left,
+            .v4-reveal-right,
+            .v4-reveal-card,
+            .v4-button,
+            .v4-service-card,
+            .v4-gallery-item {
+                transition: none;
+            }
+
+            .v4-marquee-track,
+            .effects-active .v4-image-stage,
+            .v4-help-card:hover .v4-icon {
+                animation: none;
+            }
+        }
+
+        .v4-footer {
+            padding-top: 92px;
+        }
+
+        .v4-footer-shell {
+            padding: 34px;
+            background:
+                radial-gradient(circle at right top, rgba(129, 170, 177, 0.18), transparent 18rem),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 248, 0.88));
+        }
+
+        .v4-footer-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .v4-footer-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .v4-footer-links a {
+            display: block;
+            margin-top: 10px;
+            color: var(--v4-text-soft);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .v4-footer-links a:hover {
+            color: var(--v4-text);
+        }
+
+        .v4-footer-note {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(63, 123, 133, 0.1);
+            color: var(--v4-text-soft);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1120px) {
+            .v4-hero,
+            .v4-help-grid,
+            .v4-gallery-wrap,
+            .v4-steps-wrap,
+            .v4-service-grid,
+            .v4-contact-grid,
+            .v4-section-head,
+            .v4-mid-cta,
+            .v4-footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .v4-help-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .v4-service-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 920px) {
+            .v4-info-grid,
+            .v4-footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .v4-container {
+                width: min(var(--v4-container), calc(100% - 20px));
+            }
+
+            .v4-utility {
+                display: none;
+            }
+
+            .v4-header {
+                padding-top: 10px;
+            }
+
+            .v4-nav-shell {
+                border-radius: 28px;
+                padding: 12px 14px;
+            }
+
+            .v4-nav {
+                display: none;
+            }
+
+            .v4-mobile-nav {
+                display: block;
+            }
+
+            .v4-mobile-nav summary {
+                list-style: none;
+            }
+
+            .v4-mobile-nav summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .v4-mobile-nav-row {
+                display: grid;
+                grid-template-columns: 52px 1fr 52px;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .v4-mobile-nav .v4-logo {
+                justify-content: center;
+            }
+
+            .v4-mobile-spacer {
+                display: block;
+                width: 52px;
+                height: 52px;
+            }
+
+            .v4-mobile-menu .v4-theme-toggle {
+                width: 100%;
+            }
+
+            .v4-help-grid,
+            .v4-service-grid,
+            .v4-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .v4-logo img {
+                height: 52px;
+            }
+
+            .v4-display {
+                font-size: clamp(40px, 14vw, 66px);
+                max-width: 10ch;
+            }
+
+            .v4-section-title,
+            .v4-image-copy h2,
+            .v4-help-card h3,
+            .v4-step-card h3,
+            .v4-service-card h3,
+            .v4-contact-panel h3 {
+                font-size: 28px;
+            }
+
+            .v4-hero-panel,
+            .v4-card,
+            .v4-footer-shell {
+                padding: 22px;
+            }
+        }
+    </style>
+
+    <!-- Link to main CSS will be injected here by HtmlWebpackPlugin -->
+</head>
+
+<body class="variant-four">
+<div class="v4-utility">
+    <div class="v4-container v4-utility-inner">
+        <span class="v4-utility-pill">Privatpraxis für Physiotherapie & Orthopädie</span>
+        <span class="v4-utility-pill">Königsallee 66, 40212 Düsseldorf</span>
+        <span class="v4-utility-pill">Öffnungszeiten: [Platzhalter]</span>
+    </div>
+</div>
+
+<header class="v4-header">
+    <div class="v4-container v4-nav-shell">
+        <div class="v4-nav">
+            <nav class="v4-nav-links" aria-label="Primäre Navigation">
+                <a href="#leistungen">Leistungen</a>
+                <a href="#ablauf">Ablauf</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <a class="v4-logo" href="#top" aria-label="KÖ-PHYSIO Startseite">
+                <img
+                    src="https://d3thl45e1l81vj.cloudfront.net/logos/koephysio-logo-grey-diagonal-gradiant.png"
+                    alt="KÖ-PHYSIO Privat Logo"
+                >
+            </a>
+
+            <div class="v4-nav-actions">
+                <div data-controller="theme">
+                    <button
+                        data-theme-target="toggleButton"
+                        data-action="click->theme#toggle"
+                        class="v4-theme-toggle"
+                        type="button"
+                    ></button>
+                </div>
+                <a href="#kontakt">Kontakt</a>
+                <a class="v4-button v4-button-primary" href="#doctolib">Termin buchen</a>
+            </div>
+        </div>
+
+        <details class="v4-mobile-nav">
+            <summary class="v4-mobile-nav-row">
+                <span class="v4-mobile-spacer" aria-hidden="true"></span>
+                <a class="v4-logo" href="#top" aria-label="KÖ-PHYSIO Startseite">
+                    <img
+                        src="https://d3thl45e1l81vj.cloudfront.net/logos/koephysio-logo-grey-diagonal-gradiant.png"
+                        alt="KÖ-PHYSIO Privat Logo"
+                    >
+                </a>
+
+                <span class="v4-mobile-toggle" aria-label="Menü öffnen">
+                    <span class="v4-burger" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </span>
+            </summary>
+
+            <nav class="v4-mobile-menu" aria-label="Mobile Navigation">
+                <a href="#leistungen">Leistungen</a>
+                <a href="#ablauf">Ablauf</a>
+                <a href="#faq">FAQ</a>
+                <a href="#kontakt">Kontakt</a>
+                <div data-controller="theme">
+                    <button
+                        data-theme-target="toggleButton"
+                        data-action="click->theme#toggle"
+                        class="v4-theme-toggle"
+                        type="button"
+                    ></button>
+                </div>
+                <a class="v4-button v4-button-primary" href="#doctolib">Termin buchen</a>
+            </nav>
+        </details>
+    </div>
+</header>
+
+<main class="v4-page" id="top">
+    <div class="v4-container">
+        <section class="v4-hero effects-container" data-controller="hero-effects">
+            <article class="v4-hero-panel v4-reveal-left">
+                <span class="v4-kicker">Variante 04 · Struktur nach Referenzseite</span>
+                <h1 class="v4-display">Physiotherapie und Privatpraxis mit klarer Führung von Anfang an.</h1>
+                <p class="v4-lead">
+                    Diese Variante übernimmt die Struktur der Referenzseite deutlich direkter: serviceorientierter
+                    Hero, klare Informationskarten, thematische Einstiegsblöcke, Galerie, Behandlungsablauf,
+                    FAQ und ein starker, aber ruhiger Buchungspfad.
+                </p>
+
+                <div class="v4-actions">
+                    <a class="v4-button v4-button-primary" href="#doctolib">Termin zur Ersteinschätzung</a>
+                    <a class="v4-button v4-button-secondary" href="#kontakt">Hier finden Sie uns</a>
+                </div>
+            </article>
+
+            <aside class="v4-image-panel v4-reveal-right v4-stagger-1">
+                <div class="v4-image-stage">
+                    <span class="v4-badge">Hero Bild Placeholder</span>
+                    <div class="v4-image-copy">
+                        <h2>Platz für moderne Praxisfotografie, Behandlungsaufnahme oder Team-Szene</h2>
+                        <p>Wie in der Referenz steht hier eine große menschliche Bildfläche im Mittelpunkt, aber in der KÖ-PHYSIO-Tonalität.</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="v4-info-grid effects-container" data-controller="hero-effects">
+            <article class="v4-info-panel v4-reveal-card">
+                <span class="v4-info-label">Standort</span>
+                <p>Königsallee 66<br>40212 Düsseldorf</p>
+            </article>
+            <article class="v4-info-panel v4-reveal-card v4-stagger-1">
+                <span class="v4-info-label">Kontakt</span>
+                <p>[Telefon]<br>[E-Mail]</p>
+            </article>
+            <article class="v4-info-panel v4-reveal-card v4-stagger-2">
+                <span class="v4-info-label">Öffnungszeiten</span>
+                <p>[Platzhalter]</p>
+            </article>
+        </section>
+
+        <div class="v4-marquee" aria-hidden="true">
+            <div class="v4-marquee-track">
+                <span>KÖ-PHYSIO</span>
+                <span>Privatpraxis</span>
+                <span>Physiotherapie</span>
+                <span>Orthopädie</span>
+                <span>KÖ-PHYSIO</span>
+                <span>Privatpraxis</span>
+                <span>Physiotherapie</span>
+                <span>Orthopädie</span>
+            </div>
+        </div>
+
+        <section class="v4-section effects-container" data-controller="hero-effects">
+            <div class="v4-section-head">
+                <div>
+                    <span class="v4-kicker">Wobei wir helfen</span>
+                    <h2 class="v4-section-title">Eine klare Einstiegslogik wie auf der Referenzseite.</h2>
+                </div>
+                <p class="v4-text">
+                    Statt direkt in Fachbegriffe zu springen, beginnt diese Variante mit verständlichen Themenfeldern.
+                    Das macht die Seite zugänglicher und näher an einer modernen, serviceorientierten Privatpraxis.
+                </p>
+            </div>
+
+            <div class="v4-help-grid">
+                <article class="v4-help-card v4-reveal-card">
+                    <div class="v4-icon"></div>
+                    <h3>Beschwerden</h3>
+                    <p>Wenn Schmerzen, Spannungen oder Einschränkungen im Alltag oder Beruf wieder gezielt behandelt werden sollen.</p>
+                </article>
+                <article class="v4-help-card v4-reveal-card v4-stagger-1">
+                    <div class="v4-icon"></div>
+                    <h3>Rehabilitation</h3>
+                    <p>Nach Operationen, Belastungsphasen oder Eingriffen mit mehr Ruhe, Aufmerksamkeit und therapeutischer Struktur.</p>
+                </article>
+                <article class="v4-help-card v4-reveal-card v4-stagger-2">
+                    <div class="v4-icon"></div>
+                    <h3>Prävention</h3>
+                    <p>Für mehr Stabilität, bessere Belastbarkeit und eine vorausschauende Begleitung im privaten Rahmen.</p>
+                </article>
+                <article class="v4-help-card v4-reveal-card v4-stagger-3">
+                    <div class="v4-icon"></div>
+                    <h3>Spezielle Anliegen</h3>
+                    <p>Zum Beispiel CMD, neurologische Behandlung, Lymphdrainage oder die Betreuung nach Krebsoperation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="v4-section effects-container" data-controller="hero-effects">
+            <div class="v4-section-head">
+                <div>
+                    <span class="v4-kicker">Galerie</span>
+                    <h2 class="v4-section-title">Große Bildbühnen wie bei der Referenz, aber in eurer Markenruhe.</h2>
+                </div>
+                <p class="v4-text">
+                    Die Referenz nutzt viel Fotografie, um Nähe und Vertrauen aufzubauen. Deshalb enthält diese
+                    Variante eine deutlich ausgebaute Galerie-Struktur mit mehreren Platzhaltern.
+                </p>
+            </div>
+
+            <div class="v4-gallery-wrap">
+                <div class="v4-gallery-panel v4-reveal-left">
+                    <div class="v4-gallery-item v4-gallery-tall"><span>Praxis Placeholder</span></div>
+                </div>
+                <div class="v4-gallery-grid v4-reveal-right v4-stagger-1">
+                    <div class="v4-gallery-item"><span>Behandlung Placeholder</span></div>
+                    <div class="v4-gallery-item"><span>Raum Placeholder</span></div>
+                    <div class="v4-gallery-item"><span>Team Placeholder</span></div>
+                    <div class="v4-gallery-item"><span>Detail Placeholder</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-section effects-container" data-controller="hero-effects" id="ablauf">
+            <div class="v4-steps-wrap">
+                <article class="v4-card v4-reveal-left">
+                    <span class="v4-kicker">Schritt für Schritt</span>
+                    <h2 class="v4-section-title">Ein nachvollziehbarer Weg zur Behandlung.</h2>
+                    <p class="v4-text" style="margin-top:16px;">
+                        Wie in der Referenz wird der Behandlungsweg klar erklärt. Das schafft Orientierung
+                        und unterstreicht den Unterschied zur hektischen Standardpraxis.
+                    </p>
+                    <div class="v4-actions" style="margin-top:22px;">
+                        <a class="v4-button v4-button-primary" href="#doctolib">Termin buchen</a>
+                        <a class="v4-button v4-button-secondary" href="#leistungen">Leistungen ansehen</a>
+                    </div>
+                </article>
+
+                <div class="v4-step-grid">
+                    <article class="v4-step-card v4-reveal-card">
+                        <span class="v4-step-number">1</span>
+                        <h3>Termin & Erstkontakt</h3>
+                        <p>Der Einstieg erfolgt über Doctolib oder die direkte Kontaktaufnahme mit der Praxis.</p>
+                    </article>
+                    <article class="v4-step-card v4-reveal-card v4-stagger-1">
+                        <span class="v4-step-number">2</span>
+                        <h3>Befund & Einordnung</h3>
+                        <p>Zu Beginn stehen Anamnese, genaue Einschätzung und eine sinnvolle erste therapeutische Richtung.</p>
+                    </article>
+                    <article class="v4-step-card v4-reveal-card v4-stagger-2">
+                        <span class="v4-step-number">3</span>
+                        <h3>Weiterführende Behandlung</h3>
+                        <p>Danach folgt eine individuell geführte Therapie mit Fokus auf Entwicklung, Belastbarkeit und Nachvollziehbarkeit.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-section effects-container" data-controller="hero-effects" id="doctolib">
+            <div class="v4-mid-cta v4-reveal">
+                <div>
+                    <span class="v4-kicker">Zwischen-CTA</span>
+                    <h2 class="v4-section-title">Die Struktur hält die Terminbuchung sichtbar und zugänglich.</h2>
+                    <p class="v4-text" style="margin-top:10px;">
+                        Auch hier übernimmt die Seite die Referenzlogik: ein deutlich sichtbarer Terminblock
+                        zwischen Inhaltssektionen, aber ohne billige Conversion-Sprache.
+                    </p>
+                </div>
+                <div class="v4-actions" style="margin:0;">
+                    <a class="v4-button v4-button-primary" href="https://www.doctolib.de/" target="_blank" rel="noreferrer">Zu Doctolib</a>
+                    <a class="v4-button v4-button-secondary" href="#kontakt">Kontakt</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-section effects-container" data-controller="hero-effects" id="leistungen">
+            <div class="v4-section-head">
+                <div>
+                    <span class="v4-kicker">Leistungen & Methoden</span>
+                    <h2 class="v4-section-title">Als Raster aufgebaut, wie bei der Referenzseite.</h2>
+                </div>
+                <p class="v4-text">
+                    Die Seite zeigt Leistungen in einer serviceorientierten Kartenlogik. Dadurch wirkt
+                    die Praxis übersichtlicher und zugänglicher, ohne ihre hochwertige Haltung zu verlieren.
+                </p>
+            </div>
+
+            <div class="v4-service-grid">
+                <article class="v4-service-card v4-reveal-card">
+                    <div class="v4-service-media"><span>Bild Placeholder</span></div>
+                    <div class="v4-service-body">
+                        <span class="v4-service-tag">Kernleistung</span>
+                        <h3>Krankengymnastik</h3>
+                        <p>Für funktionelle Beschwerden, strukturierten Bewegungsaufbau und mehr Belastbarkeit im Alltag.</p>
+                    </div>
+                </article>
+                <article class="v4-service-card v4-reveal-card v4-stagger-1">
+                    <div class="v4-service-media"><span>Bild Placeholder</span></div>
+                    <div class="v4-service-body">
+                        <span class="v4-service-tag">Spezialisiert</span>
+                        <h3>Manuelle Therapie</h3>
+                        <p>Präzise physiotherapeutische Behandlung mit Fokus auf Gelenkfunktion, Bewegung und Befundlogik.</p>
+                    </div>
+                </article>
+                <article class="v4-service-card v4-reveal-card v4-stagger-2">
+                    <div class="v4-service-media"><span>Bild Placeholder</span></div>
+                    <div class="v4-service-body">
+                        <span class="v4-service-tag">Neurologie</span>
+                        <h3>Neurologische Behandlung KG (ZNS)</h3>
+                        <p>Für komplexere Bewegungs- und Funktionsanforderungen mit persönlicher therapeutischer Führung.</p>
+                    </div>
+                </article>
+                <article class="v4-service-card v4-reveal-card v4-stagger-3">
+                    <div class="v4-service-media"><span>Bild Placeholder</span></div>
+                    <div class="v4-service-body">
+                        <span class="v4-service-tag">Spezialisiert</span>
+                        <h3>CMD</h3>
+                        <p>Zur physiotherapeutischen Behandlung von Kiefer-, Kopf- und Nackenbeschwerden.</p>
+                    </div>
+                </article>
+                <article class="v4-service-card v4-reveal-card v4-stagger-4">
+                    <div class="v4-service-media"><span>Bild Placeholder</span></div>
+                    <div class="v4-service-body">
+                        <span class="v4-service-tag">Training</span>
+                        <h3>Sportphysiotherapie</h3>
+                        <p>Für aktive Menschen, die Belastbarkeit, Rückkehr in Bewegung und funktionelle Stabilität suchen.</p>
+                    </div>
+                </article>
+                <article class="v4-service-card v4-reveal-card v4-stagger-5">
+                    <div class="v4-service-media"><span>Bild Placeholder</span></div>
+                    <div class="v4-service-body">
+                        <span class="v4-service-tag">Begleitend</span>
+                        <h3>Manuelle Lymphdrainage</h3>
+                        <p>Als ergänzende Maßnahme in sorgfältig abgestimmten Behandlungsabläufen.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="v4-section effects-container" data-controller="hero-effects" id="kontakt">
+            <div class="v4-section-head">
+                <div>
+                    <span class="v4-kicker">Standort & Kontakt</span>
+                    <h2 class="v4-section-title">Wie auf der Referenzseite: Karte, Kontaktdaten und Orientierung zusammengeführt.</h2>
+                </div>
+                <p class="v4-text">
+                    Die Kontaktsektion kombiniert eine visuelle Lagefläche mit den wichtigsten Informationen,
+                    damit der Abschluss klar und serviceorientiert wirkt.
+                </p>
+            </div>
+
+            <div class="v4-contact-grid">
+                <article class="v4-contact-panel v4-reveal-left">
+                    <div class="v4-map-stage">
+                        <span>Map Placeholder</span>
+                    </div>
+                </article>
+
+                <article class="v4-contact-panel v4-reveal-right v4-stagger-1">
+                    <h3>KÖ-PHYSIO</h3>
+                    <div class="v4-contact-stack">
+                        <div class="v4-contact-row">
+                            <strong>Adresse</strong>
+                            <span>Königsallee 66<br>40212 Düsseldorf</span>
+                        </div>
+                        <div class="v4-contact-row">
+                            <strong>Telefon</strong>
+                            <span>[Platzhalter]</span>
+                        </div>
+                        <div class="v4-contact-row">
+                            <strong>E-Mail</strong>
+                            <span>[Platzhalter]</span>
+                        </div>
+                        <div class="v4-contact-row">
+                            <strong>Öffnungszeiten</strong>
+                            <span>[Platzhalter]</span>
+                        </div>
+                        <div class="v4-contact-row">
+                            <strong>Hinweis</strong>
+                            <span>Die finale Buchung ist über Doctolib vorgesehen. Telefonnummer, E-Mail und Zeiten werden ergänzt.</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="v4-section effects-container" data-controller="hero-effects" id="faq">
+            <div class="v4-section-head">
+                <div>
+                    <span class="v4-kicker">FAQ</span>
+                    <h2 class="v4-section-title">Häufige Fragen, wie es die Referenzseite ebenfalls stark nutzt.</h2>
+                </div>
+                <p class="v4-text">
+                    Dieser Bereich übernimmt die hilfreiche Frage-Antwort-Logik der Referenz und macht den
+                    Einstieg in die Privatpraxis transparenter.
+                </p>
+            </div>
+
+            <div class="v4-faq-wrap">
+                <article class="v4-faq-card v4-reveal-card">
+                    <details>
+                        <summary>Wie läuft ein erster Termin bei KÖ-PHYSIO ab?</summary>
+                        <p>Zu Beginn stehen Anamnese, Befund und eine erste therapeutische Einordnung im Vordergrund. Daraus ergibt sich eine nachvollziehbare Empfehlung für das weitere Vorgehen.</p>
+                    </details>
+                </article>
+                <article class="v4-faq-card v4-reveal-card v4-stagger-1">
+                    <details>
+                        <summary>Ist die Behandlung eher ruhig oder aktiv?</summary>
+                        <p>Das hängt vom Befund ab. Die Praxis verbindet manuelle, funktionelle und aktive Elemente so, dass sie zur jeweiligen Situation sinnvoll passen.</p>
+                    </details>
+                </article>
+                <article class="v4-faq-card v4-reveal-card v4-stagger-2">
+                    <details>
+                        <summary>Kann ich auch mit einem spezifischen Thema wie CMD oder Lymphdrainage kommen?</summary>
+                        <p>Ja. Gerade spezialisierte Anliegen gehören bewusst zur Positionierung der Praxis und werden in dieser Variante klar sichtbar gemacht.</p>
+                    </details>
+                </article>
+                <article class="v4-faq-card v4-reveal-card v4-stagger-3">
+                    <details>
+                        <summary>Wie buche ich meinen Termin?</summary>
+                        <p>Die Online-Terminvereinbarung ist über Doctolib vorgesehen. Der finale Praxislink kann an dieser Stelle ergänzt werden, sobald er freigegeben ist.</p>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <footer class="v4-footer effects-container" data-controller="hero-effects">
+            <div class="v4-footer-shell v4-reveal">
+                <div class="v4-footer-grid">
+                    <div>
+                        <span class="v4-kicker">Abschluss-CTA</span>
+                        <h2 class="v4-section-title">Nehmen Sie Ihre Behandlung bewusst in die Hand.</h2>
+                        <p class="v4-text" style="margin-top:14px;">
+                            Die Seite endet wie die Referenz mit einer klaren Aufforderung zur Kontaktaufnahme,
+                            aber weiterhin mit dem Ton einer hochwertigen Privatpraxis.
+                        </p>
+                        <div class="v4-actions" style="margin-top:22px;">
+                            <a class="v4-button v4-button-primary" href="https://www.doctolib.de/" target="_blank" rel="noreferrer">Termin buchen</a>
+                            <a class="v4-button v4-button-secondary" href="#kontakt">Kontakt aufnehmen</a>
+                        </div>
+                    </div>
+
+                    <div class="v4-footer-links">
+                        <div>
+                            <span class="v4-info-label">Menü</span>
+                            <a href="#leistungen">Leistungen</a>
+                            <a href="#ablauf">Ablauf</a>
+                            <a href="#faq">FAQ</a>
+                            <a href="#kontakt">Kontakt</a>
+                        </div>
+                        <div>
+                            <span class="v4-info-label">Kontakt</span>
+                            <a href="#kontakt">Königsallee 66, 40212 Düsseldorf</a>
+                            <a href="#kontakt">[Telefon]</a>
+                            <a href="#kontakt">[E-Mail]</a>
+                            <a href="#kontakt">Öffnungszeiten [Platzhalter]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="v4-footer-note">
+                    Variante 04 für KÖ-PHYSIO · strukturell an die bereitgestellte FizioPont-Referenzseite angelehnt.
+                </div>
+            </div>
+        </footer>
+    </div>
+</main>
+
+<!-- Main JS bundle will be injected by HtmlWebpackPlugin -->
+</body>
+
+</html>

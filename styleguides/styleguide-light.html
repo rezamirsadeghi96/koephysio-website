@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KÖ-PHYSIO – Beispiel Style Guide</title>
+    <style>
+      :root {
+        --bg: #f7f5f1;
+        --surface: #ffffff;
+        --surface-muted: #f0ede7;
+        --text: #1d1d1b;
+        --text-soft: #5f5c57;
+        --line: #d8d2ca;
+        --accent: #b9afa1;
+        --accent-deep: #8e8377;
+        --shadow: 0 20px 60px rgba(20, 20, 20, 0.08);
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --container: 1180px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #fbfaf8 0%, #f4f1eb 100%);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      h1, h2, h3, .display, .eyebrow-brand {
+        font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+
+      p { margin: 0; }
+
+      .container {
+        width: min(var(--container), calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .hero {
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        padding: 48px 0 80px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(16px);
+        background: rgba(251, 250, 248, 0.72);
+        border-bottom: 1px solid rgba(216, 210, 202, 0.75);
+        z-index: 50;
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: var(--accent-deep);
+        font-size: 13px;
+        background: rgba(255,255,255,0.75);
+      }
+
+      .brand-name {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 28px;
+        letter-spacing: 0.02em;
+      }
+
+      .nav {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--text-soft);
+        font-size: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        transition: 180ms ease;
+      }
+
+      .button-primary {
+        background: var(--text);
+        color: white;
+        border: 1px solid var(--text);
+      }
+
+      .button-primary:hover { transform: translateY(-1px); }
+
+      .button-secondary {
+        color: var(--text);
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.72);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--accent-deep);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .display {
+        font-size: clamp(56px, 8vw, 96px);
+        line-height: 0.95;
+        margin-bottom: 22px;
+      }
+
+      .hero-copy {
+        max-width: 640px;
+        font-size: 18px;
+        color: var(--text-soft);
+        margin-bottom: 32px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .hero-card {
+        background: linear-gradient(145deg, rgba(255,255,255,0.88), rgba(240,237,231,0.92));
+        border: 1px solid rgba(216, 210, 202, 0.9);
+        border-radius: var(--radius-xl);
+        padding: 34px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card .placeholder {
+        aspect-ratio: 4 / 5;
+        border-radius: 22px;
+        background: radial-gradient(circle at top, #f7f5f1, #e8e2d9 45%, #cfc4b6 100%);
+        border: 1px solid rgba(216, 210, 202, 0.9);
+        display: flex;
+        align-items: end;
+        padding: 24px;
+      }
+
+      .placeholder-label {
+        background: rgba(255,255,255,0.7);
+        border: 1px solid rgba(216, 210, 202, 0.9);
+        padding: 12px 14px;
+        border-radius: 14px;
+        color: var(--text-soft);
+        font-size: 14px;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 36px;
+      }
+
+      .section-title {
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.02;
+      }
+
+      .section-text {
+        color: var(--text-soft);
+        font-size: 16px;
+        max-width: 620px;
+      }
+
+      .swatches {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .swatch {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(20, 20, 20, 0.04);
+      }
+
+      .swatch-color {
+        height: 140px;
+      }
+
+      .swatch-meta {
+        padding: 18px;
+      }
+
+      .swatch-name {
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .swatch-code {
+        color: var(--text-soft);
+        font-size: 14px;
+      }
+
+      .type-grid,
+      .card-grid,
+      .spacing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(255,255,255,0.76);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        box-shadow: 0 12px 30px rgba(20,20,20,0.04);
+      }
+
+      .card h3 {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+
+      .muted { color: var(--text-soft); }
+
+      .type-sample-display {
+        font-size: 52px;
+        line-height: 0.95;
+        margin-bottom: 12px;
+      }
+
+      .type-sample-h2 {
+        font-size: 38px;
+        margin-bottom: 12px;
+      }
+
+      .type-sample-body {
+        font-size: 17px;
+        color: var(--text-soft);
+      }
+
+      .component-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .service-card {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244,241,235,0.85));
+      }
+
+      .service-card .index {
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        border: 1px solid var(--line);
+        color: var(--accent-deep);
+        font-size: 13px;
+      }
+
+      .service-card h4 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 500;
+      }
+
+      .service-card p {
+        color: var(--text-soft);
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .spacing-box {
+        border: 1px dashed var(--line);
+        border-radius: 20px;
+        background: rgba(255,255,255,0.55);
+        padding: 24px;
+      }
+
+      .space-demo {
+        background: linear-gradient(90deg, #d9d2c8, #b9afa1);
+        border-radius: 12px;
+      }
+
+      .space-8 { height: 8px; width: 32%; }
+      .space-16 { height: 16px; width: 44%; }
+      .space-24 { height: 24px; width: 56%; }
+      .space-40 { height: 40px; width: 70%; }
+      .space-64 { height: 64px; width: 84%; }
+
+      .footer {
+        padding: 50px 0 70px;
+        color: var(--text-soft);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .section-head,
+        .swatches,
+        .type-grid,
+        .card-grid,
+        .service-grid,
+        .spacing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 28px;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">KÖ</div>
+          <div class="brand-name">KÖ-PHYSIO</div>
+        </div>
+        <nav class="nav">
+          <a href="#colors">Farben</a>
+          <a href="#typography">Typografie</a>
+          <a href="#components">Komponenten</a>
+          <a href="#layout">Layout</a>
+          <a class="button button-primary" href="#">Doctolib CTA</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Beispiel Style Guide</span>
+            <h1 class="display">Luxus, Ruhe und medizinische Präzision.</h1>
+            <p class="hero-copy">
+              Dieser Beispiel-Style-Guide zeigt die Designrichtung für KÖ-PHYSIO:
+              minimal, hochwertig, seriös und ohne billige Praxis-Optik.
+            </p>
+            <div class="actions">
+              <a class="button button-primary" href="#components">Komponenten ansehen</a>
+              <a class="button button-secondary" href="#colors">Farbwelt prüfen</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="placeholder">
+              <div class="placeholder-label">Platzhalter für Hero-Foto, Praxisdetail oder Markenvisual</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="colors">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">01 · Farbwelt</span>
+              <h2 class="section-title">Reduziert, weich und hochwertig.</h2>
+            </div>
+            <p class="section-text">
+              Keine Klinik-Kälte in Blau. Keine billigen Verläufe. Diese Palette wirkt ruhig,
+              elegant und passt zu einer exklusiven Privatpraxis in Düsseldorf.
+            </p>
+          </div>
+
+          <div class="swatches">
+            <article class="swatch">
+              <div class="swatch-color" style="background:#1d1d1b"></div>
+              <div class="swatch-meta">
+                <div class="swatch-name">Charcoal</div>
+                <div class="swatch-code">#1D1D1B · Primärer Text, Footer, CTA</div>
+              </div>
+            </article>
+
+            <article class="swatch">
+              <div class="swatch-color" style="background:#f7f5f1"></div>
+              <div class="swatch-meta">
+                <div class="swatch-name">Warm Ivory</div>
+                <div class="swatch-code">#F7F5F1 · Haupt-Hintergrund</div>
+              </div>
+            </article>
+
+            <article class="swatch">
+              <div class="swatch-color" style="background:#d8d2ca"></div>
+              <div class="swatch-meta">
+                <div class="swatch-name">Stone Line</div>
+                <div class="swatch-code">#D8D2CA · Linien, Rahmen, Divider</div>
+              </div>
+            </article>
+
+            <article class="swatch">
+              <div class="swatch-color" style="background:#b9afa1"></div>
+              <div class="swatch-meta">
+                <div class="swatch-name">Soft Taupe</div>
+                <div class="swatch-code">#B9AFA1 · Dezente Akzente</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="typography">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">02 · Typografie</span>
+              <h2 class="section-title">Serif für Haltung. Sans für Klarheit.</h2>
+            </div>
+            <p class="section-text">
+              Die Marke braucht Kontrast: elegante Headlines für Premium-Wirkung,
+              moderne Sans-Serif für Lesbarkeit und medizinische Präzision.
+            </p>
+          </div>
+
+          <div class="type-grid">
+            <article class="card">
+              <div class="type-sample-display">KÖ-PHYSIO</div>
+              <p class="muted">Display / Hero · Cormorant Garamond oder vergleichbare Premium-Serif</p>
+            </article>
+
+            <article class="card">
+              <div class="type-sample-h2">Privatpraxis für Physiotherapie & Orthopädie</div>
+              <p class="muted">Section Headline · Serif, großzügig, ruhig</p>
+            </article>
+
+            <article class="card">
+              <p class="type-sample-body">
+                Individuelle Therapie, klare Diagnostik und eine ruhige, hochwertige Patientenführung –
+                ohne überladene Praxis-Kommunikation.
+              </p>
+              <p class="muted" style="margin-top:14px;">Body Copy · Inter / System Sans</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="components">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">03 · Komponenten</span>
+              <h2 class="section-title">Wenige Bausteine. Dafür sauber.</h2>
+            </div>
+            <p class="section-text">
+              Genau hier sterben viele Websites: zu viele Komponenten, zu viele Stile,
+              zu wenig Linie. KÖ-PHYSIO braucht ein knappes, konsistentes System.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <article class="card component-stack">
+              <h3>Buttons</h3>
+              <div class="actions">
+                <a href="#" class="button button-primary">Termin vereinbaren</a>
+                <a href="#" class="button button-secondary">Leistungen ansehen</a>
+              </div>
+              <p class="muted">Rund, ruhig, viel Padding. Keine aggressiven Farben.</p>
+            </article>
+
+            <article class="card component-stack">
+              <h3>Info Card</h3>
+              <div class="service-card">
+                <div class="index">01</div>
+                <h4>Manuelle Therapie</h4>
+                <p>Gezielte Behandlung mit präziser Diagnostik und persönlicher Betreuung.</p>
+              </div>
+              <p class="muted">Für Leistungen, Vorteile oder Praxismerkmale.</p>
+            </article>
+
+            <article class="card component-stack">
+              <h3>CTA Block</h3>
+              <div class="service-card">
+                <h4>Terminbuchung über Doctolib</h4>
+                <p>Ein ruhiger, klarer Call-to-Action ohne Druck, aber mit klarer Führung.</p>
+                <div style="margin-top:18px;">
+                  <a href="#" class="button button-primary">Jetzt buchen</a>
+                </div>
+              </div>
+              <p class="muted">Konsequent wiederverwendbar in Hero, Leistungen und Footer.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="layout">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">04 · Beispiel Layout</span>
+              <h2 class="section-title">Ein Hero, der nicht schreit – sondern überzeugt.</h2>
+            </div>
+            <p class="section-text">
+              Die Struktur muss vertrauensvoll führen: erst Positionierung, dann Leistungen,
+              dann Vertrauen, dann Terminbuchung. Nicht alles gleichzeitig.
+            </p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="index">01</div>
+              <h4>Hero</h4>
+              <p>Marke, Premium-Positionierung, ruhige Headline, klarer Termin-CTA.</p>
+            </article>
+            <article class="service-card">
+              <div class="index">02</div>
+              <h4>Leistungen</h4>
+              <p>Wenige Kernleistungen, klar erklärt, mit hoher Wertigkeit dargestellt.</p>
+            </article>
+            <article class="service-card">
+              <div class="index">03</div>
+              <h4>Vertrauen</h4>
+              <p>Praxis, Haltung, Privatpraxis-Vorteile, Lage auf der Königsallee.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="spacing">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">05 · Spacing</span>
+              <h2 class="section-title">Weißraum ist kein Luxus. Er ist Pflicht.</h2>
+            </div>
+            <p class="section-text">
+              Das filigrane Logo verlangt Ruhe. Wenn du Inhalte zu dicht packst, wirkt die
+              Marke sofort billig und unruhig.
+            </p>
+          </div>
+
+          <div class="spacing-grid">
+            <article class="spacing-box">
+              <p class="muted" style="margin-bottom:16px;">8 px · Micro spacing</p>
+              <div class="space-demo space-8"></div>
+            </article>
+            <article class="spacing-box">
+              <p class="muted" style="margin-bottom:16px;">24 px · Card inner spacing</p>
+              <div class="space-demo space-24"></div>
+            </article>
+            <article class="spacing-box">
+              <p class="muted" style="margin-bottom:16px;">64 px · Section rhythm</p>
+              <div class="space-demo space-64"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        Beispiel-HTML-Style-Guide für KÖ-PHYSIO · Richtung: modern, minimal, premium, ruhig.
+      </div>
+    </footer>
+  </body>
+</html>
